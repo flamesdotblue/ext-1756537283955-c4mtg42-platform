@@ -1,28 +1,30 @@
-import { useState } from 'react'
+import React from 'react';
+import HeroSplineCover from './components/HeroSplineCover';
+import RetrogradeAnswer from './components/RetrogradeAnswer';
+import CosmicTicker from './components/CosmicTicker';
+import Starfield from './components/Starfield';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+    <div className="min-h-screen bg-black text-white font-inter overflow-x-hidden">
+      <section className="relative w-full h-screen">
+        <HeroSplineCover />
+      </section>
 
-export default App
+      <section className="relative w-full py-24 md:py-32 overflow-hidden">
+        <Starfield />
+        <div className="relative container mx-auto px-6 max-w-5xl">
+          <RetrogradeAnswer />
+        </div>
+      </section>
+
+      <section className="relative border-t border-white/10">
+        <CosmicTicker />
+      </section>
+
+      <footer className="py-10 text-center text-sm text-white/60">
+        Copyright © {new Date().getFullYear()} Cosmic Customer Support. No refunds for karmic lessons.
+      </footer>
+    </div>
+  );
+}
